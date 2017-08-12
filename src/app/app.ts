@@ -14,11 +14,12 @@ import { HttpModule } from '@angular/http';
  */
 import { HomeComponent } from './components/home/home.component';
 import { AppComponent } from './components/app.component';
+import { CreatureComponent } from "./components/creature/creature.component"
 
 /**
  * Import material UI Components
  */
-import { MdButtonModule, MdSlideToggleModule } from '@angular/material';
+import { MdButtonModule, MdSlideToggleModule, MdInputModule } from '@angular/material';
 
 import { routes } from './app.routes';
 
@@ -35,9 +36,10 @@ import { routes } from './app.routes';
         BrowserAnimationsModule,
         MdButtonModule,
         MdSlideToggleModule,
+        MdInputModule,
         RouterModule.forRoot(routes, { useHash: true }),
     ],
-    declarations: [AppComponent, HomeComponent],
+    declarations: [AppComponent, HomeComponent, CreatureComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

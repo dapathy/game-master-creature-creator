@@ -1,7 +1,9 @@
 /**
  * Include our app
  */
-const {app, BrowserWindow } = require('electron');
+const {app, BrowserWindow, ipcMain } = require('electron');
+const fs = require('fs');
+const os = require('os');
 
 // browser-window creates a native window
 let mainWindow = null;
@@ -38,4 +40,10 @@ app.on('activate', () => {
   if (mainWindow === null) {
     createWindow();
   }
+});
+
+ipcMain.on("writeToFile", (event, contents) => {
+  console.log("here");
+  console.log(contents);
+  fs.writeFileSync(os.homedir() + "\\Desktop\\test.txt", contents);
 });
