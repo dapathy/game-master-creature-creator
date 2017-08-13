@@ -1,9 +1,9 @@
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" class="creature-form">
   <md-input-container>
     <input type="text" mdInput placeholder="Name" [(ngModel)]="creature.name" name="name">
   </md-input-container>
   <md-input-container>
-    <input type="number" mdInput placeholder="Size" [(ngModel)]="creature.size" name="size">
+    <input type="text" mdInput placeholder="Size" [(ngModel)]="creature.size" name="size">
   </md-input-container>
   <md-input-container>
     <input type="number" mdInput placeholder="HP" [(ngModel)]="creature.hp" name="hp">
@@ -30,5 +30,5 @@
     <input type="number" mdInput placeholder="Charisma" [(ngModel)]="creature.cha" name="cha">
   </md-input-container>
 
-  <button md-button type="submit">Save</button>
+  <button md-raised-button type="submit">Save</button>
 </form>

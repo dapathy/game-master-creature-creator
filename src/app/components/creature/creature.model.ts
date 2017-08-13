@@ -11,3 +11,14 @@ export class Creature {
   wis: number;
   cha: number;
 }
+
+export class ExportFile {
+  compendium: Compendium = new Compendium();
+}
+
+export class Compendium {
+  // Exported as an xml attribute.
+  _version: string = "5";
+
+  monster: Creature;
+}
