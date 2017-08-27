@@ -10,6 +10,19 @@ export class Creature {
   int: number;
   wis: number;
   cha: number;
+
+  resist: string;
+  immune: string;
+  vulnerable: string;
+  conditionImmune: string;
+  senses: string;
+  passive: string;
+
+  cr: number;
+
+  // Exported XML will need to flatten these properties.
+  traits: Ability[];
+  actions: Ability[];
 }
 
 export class ExportFile {
@@ -21,4 +34,9 @@ export class Compendium {
   _version: string = "5";
 
   monster: Creature;
+}
+
+export class Ability {
+  name: string;
+  text: string;
 }

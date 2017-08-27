@@ -13,14 +13,22 @@ import { Creature, ExportFile } from "./creature.model";
 
 export class CreatureComponent {
   public creature = new Creature();
+  public xml = "";
 
-  public onSubmit() {
+  public printToView() {
+    this.xml = this.generateXml();
+  }
+
+  public saveToFile() {
+    ipcRenderer.send("writeToFile", this.generateXml());
+  }
+
+  private generateXml() {
     let file = new ExportFile();
     file.compendium.monster = this.creature;
 
     let serializer = new X2JS();
     let xml = serializer.js2xml(file).toString();
-    let prettyXml = Beautify.xml(xml);
-    ipcRenderer.send("writeToFile", prettyXml);
+    return Beautify.xml(xml);
   }
 }
