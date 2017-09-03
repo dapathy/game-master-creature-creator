@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col col--sm">
       <form (ngSubmit)="printToView()" class="creature-form">
+        <h4>Basic Info</h4>
         <md-input-container>
           <input type="text" mdInput placeholder="Name" [(ngModel)]="creature.name" name="name">
         </md-input-container>
@@ -17,6 +18,8 @@
         <md-input-container>
           <input type="number" mdInput placeholder="Speed" [(ngModel)]="creature.speed" name="speed">
         </md-input-container>
+
+        <h4>Attributes</h4>
         <md-input-container>
           <input type="number" mdInput placeholder="Strength" [(ngModel)]="creature.str" name="str">
         </md-input-container>
@@ -36,6 +39,7 @@
           <input type="number" mdInput placeholder="Charisma" [(ngModel)]="creature.cha" name="cha">
         </md-input-container>
 
+        <h4>Passive Traits</h4>
         <md-input-container>
           <input type="text" mdInput placeholder="Resistances" [(ngModel)]="creature.resist" name="resist">
         </md-input-container>
@@ -55,7 +59,25 @@
           <input type="text" mdInput placeholder="Passive" [(ngModel)]="creature.passive" name="passive">
         </md-input-container>
 
-        <button md-raised-button="submit">Generate</button>
+        <!-- Traits -->
+        <h4>Traits</h4>
+        <div>
+          <div>
+            <md-input-container>
+              <input type="text" mdInput placeholder="Name" [(ngModel)]="trait.name" name="name">
+            </md-input-container>
+            <md-input-container>
+              <textarea type="text" mdInput placeholder="Text" [(ngModel)]="trait.text" name="text"></textarea>
+            </md-input-container>
+            <button md-raised-button type="button" (click)="addAbility('trait', trait)">Add</button>
+          </div>
+
+          <md-list>
+            <md-list-item ae-ability *ngFor="let trait of creature.trait" [ability]="trait"></md-list-item>
+          </md-list>
+        </div>
+
+        <button md-raised-button="submit" color="primary">Generate</button>
         <button md-raised-button type="button" (click)="saveToFile()">Save</button>
       </form>
     </div>

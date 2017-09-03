@@ -20,9 +20,8 @@ export class Creature {
 
   cr: number;
 
-  // Exported XML will need to flatten these properties.
-  traits: Ability[];
-  actions: Ability[];
+  trait: Ability[] = [];
+  action: Ability[] = [];
 }
 
 export class ExportFile {

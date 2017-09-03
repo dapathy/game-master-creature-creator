@@ -14,7 +14,8 @@ import { HttpModule } from '@angular/http';
  */
 import { HomeComponent } from './components/home/home.component';
 import { AppComponent } from './components/app.component';
-import { CreatureComponent } from "./components/creature/creature.component"
+import { CreatureComponent } from "./components/creature/creature.component";
+import {AbilityComponent} from "./components/ability/ability.component";
 
 /**
  * Import material UI Components
@@ -39,7 +40,7 @@ import { routes } from './app.routes';
         MdInputModule,
         RouterModule.forRoot(routes, { useHash: true }),
     ],
-    declarations: [AppComponent, HomeComponent, CreatureComponent],
+    declarations: [AppComponent, HomeComponent, CreatureComponent, AbilityComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
