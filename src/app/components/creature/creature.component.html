@@ -1,63 +1,63 @@
 <div class="grid grid--container">
   <div class="row">
     <div class="col col--sm">
-      <form (ngSubmit)="printToView()" class="creature-form">
+      <form (ngSubmit)="printToView()">
         <h4>Basic Info</h4>
-        <md-input-container>
+        <md-form-field>
           <input type="text" mdInput placeholder="Name" [(ngModel)]="creature.name" name="name">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="text" mdInput placeholder="Size" [(ngModel)]="creature.size" name="size">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="number" mdInput placeholder="Armor class" [(ngModel)]="creature.ac" name="ac">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="number" mdInput placeholder="HP" [(ngModel)]="creature.hp" name="hp">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="number" mdInput placeholder="Speed" [(ngModel)]="creature.speed" name="speed">
-        </md-input-container>
+        </md-form-field>
 
         <h4>Attributes</h4>
-        <md-input-container>
+        <md-form-field>
           <input type="number" mdInput placeholder="Strength" [(ngModel)]="creature.str" name="str">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="number" mdInput placeholder="Dexterity" [(ngModel)]="creature.dex" name="dex">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="number" mdInput placeholder="Constitution" [(ngModel)]="creature.con" name="con">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="number" mdInput placeholder="Intelligence" [(ngModel)]="creature.int" name="int">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="number" mdInput placeholder="Wisdom" [(ngModel)]="creature.wis" name="wis">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="number" mdInput placeholder="Charisma" [(ngModel)]="creature.cha" name="cha">
-        </md-input-container>
+        </md-form-field>
 
         <h4>Passive Traits</h4>
-        <md-input-container>
+        <md-form-field>
           <input type="text" mdInput placeholder="Resistances" [(ngModel)]="creature.resist" name="resist">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="text" mdInput placeholder="Immunities" [(ngModel)]="creature.immune" name="immune">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="text" mdInput placeholder="Vulnerabilities" [(ngModel)]="creature.vulnerable" name="vulnerable">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="text" mdInput placeholder="Condition Immunities" [(ngModel)]="creature.conditionImmune" name="conditionImmune">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="text" mdInput placeholder="Senses" [(ngModel)]="creature.senses" name="senses">
-        </md-input-container>
-        <md-input-container>
+        </md-form-field>
+        <md-form-field>
           <input type="text" mdInput placeholder="Passive" [(ngModel)]="creature.passive" name="passive">
-        </md-input-container>
+        </md-form-field>
 
         <h4>Traits</h4>
         <ae-abilities [abilities]="creature.trait"></ae-abilities>
