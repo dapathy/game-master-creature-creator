@@ -3,7 +3,7 @@ import { ipcRenderer } from "electron";
 import * as X2JS from "x2js";
 import * as Beautify from "vkbeautify";
 
-import {Ability, Creature, ExportFile} from "./creature.model";
+import { Creature, ExportFile } from "./creature.model";
 
 @Component({
   selector: 'ae-creature',
@@ -14,7 +14,6 @@ import {Ability, Creature, ExportFile} from "./creature.model";
 export class CreatureComponent {
   public creature = new Creature();
   public xml = "";
-  public trait = new Ability();
 
   public printToView() {
     this.xml = this.generateXml();

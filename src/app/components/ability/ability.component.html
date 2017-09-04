@@ -1,5 +1,21 @@
-<button md-icon-button (click)="remove()" color="warn" style="float: right">
-  <md-icon><i class="material-icons">delete</i></md-icon>
-</button>
-<h5 mdLine>{{ability.name}}</h5>
-<p mdLine>{{ability.text}}</p>
+<div>
+  <div>
+    <md-input-container>
+      <input type="text" mdInput placeholder="Name" [(ngModel)]="newAbility.name" name="name">
+    </md-input-container>
+    <md-input-container>
+      <textarea type="text" mdInput placeholder="Text" [(ngModel)]="newAbility.text" name="text"></textarea>
+    </md-input-container>
+    <button md-raised-button type="button" (click)="add()">Add</button>
+  </div>
+
+  <md-list>
+    <md-list-item *ngFor="let ability of abilities; index as i">
+      <button md-icon-button (click)="remove(i)" color="warn" style="float: right">
+        <md-icon><i class="material-icons">delete</i></md-icon>
+      </button>
+      <h5 mdLine>{{ability.name}}</h5>
+      <p mdLine>{{ability.text}}</p>
+    </md-list-item>
+  </md-list>
+</div>

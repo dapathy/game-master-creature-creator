@@ -59,23 +59,11 @@
           <input type="text" mdInput placeholder="Passive" [(ngModel)]="creature.passive" name="passive">
         </md-input-container>
 
-        <!-- Traits -->
         <h4>Traits</h4>
-        <div>
-          <div>
-            <md-input-container>
-              <input type="text" mdInput placeholder="Name" [(ngModel)]="trait.name" name="name">
-            </md-input-container>
-            <md-input-container>
-              <textarea type="text" mdInput placeholder="Text" [(ngModel)]="trait.text" name="text"></textarea>
-            </md-input-container>
-            <button md-raised-button type="button" (click)="addAbility('trait', trait)">Add</button>
-          </div>
+        <ae-abilities [abilities]="creature.trait"></ae-abilities>
 
-          <md-list>
-            <md-list-item ae-ability *ngFor="let trait of creature.trait" [ability]="trait"></md-list-item>
-          </md-list>
-        </div>
+        <h4>Actions</h4>
+        <ae-abilities [abilities]="creature.action"></ae-abilities>
 
         <button md-raised-button="submit" color="primary">Generate</button>
         <button md-raised-button type="button" (click)="saveToFile()">Save</button>

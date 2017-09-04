@@ -1,3 +1,5 @@
+import { Ability } from "../ability/ability.model";
+
 export class Creature {
   name: string;
   size: string;
@@ -33,9 +35,4 @@ export class Compendium {
   _version: string = "5";
 
   monster: Creature;
-}
-
-export class Ability {
-  name: string;
-  text: string;
 }
