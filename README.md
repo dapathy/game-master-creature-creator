@@ -1,2 +1,12 @@
 # game-master-creature-creator
-D&amp;D creature creator built in Electron and Angular.
+
+## Description
+
+Generates XML for D&D monsters to be consumed by the Game Master app. 
+
+## Built with
+
+- Electron
+- Angular
+- Material
+
